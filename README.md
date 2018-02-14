@@ -1,14 +1,13 @@
-# react-backend
+# twitter-backend-spike
 
-Boiler-plate example template when using using Node.js, Express.js and React. Created with node express-generator and create-react-app.  
-
+This code is an iteration of my [react-backend](https://github.com/oliverpople/react-backend) boiler-plate repo. The purpose of this project was to use React's fetch method to render the response of an Express.js GET request.  This response contains tweet data from Twitter's timeline API endpoint.
 
 ### Getting Started
 Checkout this repo, install dependencies, then start with the following:
 
 ```
-> git clone https://github.com/oliverpople/react-backend.git
-> cd react-backend
+> git clone https://github.com/oliverpople/twitter-backend-spike.git
+> cd twitter-backend-spike
 > npm install
 ```
 Run back-end server:
@@ -17,16 +16,11 @@ Run back-end server:
 ```
 Then in a new command line tab run the front-end:
 ```
-> cd react-backend/client
+> cd twitter-backend-spike/client
 > npm start
 ```
+Visit [http://localhost:3000/](http://localhost:3000/) to view rendered tweets.
 
-### FYI
+### Challenges
 
-This example is cover in David Ceddia's free [tutorial](https://daveceddia.com/create-react-app-express-backend/). However, I had to add a CORS middleware function to the node express server (routes/index.js) in order to load node data from a separate port.
-
-### To Do's
-
-1) Try and make the front and back end run concurrently.
-2) Think about how they would run off the same server, as they would in production.
-# twitter-backend-spike
+Enabling CORS:  To successfully authenticate my request to a remote server I had to enabled CORS. A found two solutions to this challenge 1) Requiring and running the ['cors'](https://www.npmjs.com/package/cors) node package in my express app.js, and 2) Specify the Headers I'd like to add my remote server request (also in app.js).  
